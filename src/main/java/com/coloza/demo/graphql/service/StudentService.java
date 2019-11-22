@@ -20,7 +20,7 @@ public class StudentService {
     }
 
     @Transactional
-    public Student createStudent(String name, String address, String dateOfBirth) {
+    public Student create(String name, String address, String dateOfBirth) {
         Student student = new Student();
         student.setName(name);
         student.setAddress(address);
@@ -29,11 +29,12 @@ public class StudentService {
     }
 
     @Transactional(readOnly = true)
-    public Optional<Student> getStudent(int id) {
+    public Optional<Student> findById(int id) {
         return this.repository.findById(id);
     }
 
-    public List<Student> getAllStudent(int limit) {
+    @Transactional(readOnly = true)
+    public List<Student> findAll(int limit) {
         return this.repository.findAll().stream().limit(limit).collect(Collectors.toList());
     }
 }

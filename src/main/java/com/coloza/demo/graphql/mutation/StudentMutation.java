@@ -14,6 +14,6 @@ public class StudentMutation implements GraphQLMutationResolver {
     private StudentService service;
 
     public Student createStudent(String name, String address, String dateOfBirth) {
-        return this.service.createStudent(name, address, dateOfBirth);
+        return this.service.create(name, address, dateOfBirth);
     }
 }

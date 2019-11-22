@@ -17,10 +17,10 @@ public class StudentQuery implements GraphQLQueryResolver {
     private StudentService service;
 
     public Optional<Student> getStudent(int id) {
-        return this.service.getStudent(id);
+        return this.service.findById(id);
     }
 
     public List<Student> getStudents(int limit) {
-        return this.service.getAllStudent(limit);
+        return this.service.findAll(limit);
     }
 }
