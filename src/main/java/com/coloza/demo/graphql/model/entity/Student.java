@@ -1,16 +1,12 @@
 package com.coloza.demo.graphql.model.entity;
 
-import java.io.Serializable;
-import java.time.LocalDate;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode
@@ -32,4 +28,7 @@ public class Student implements Serializable {
 
     @Column(name = "date_of_birth", nullable = true)
     private LocalDate dateOfBirth;
+
+    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    private List<Vehicle> vehicles;
 }

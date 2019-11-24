@@ -10,6 +10,11 @@ mutation {
     id
   }
 }
+mutation {
+  createVehicle(type: "VEHICLE_1", studentId: 1) {
+    id
+  }
+}
 </pre>
 <p>Query data:</p>
 <pre>
@@ -19,6 +24,18 @@ mutation {
     name
     address
     dateOfBirth
+  }
+}
+{
+  vehicles(limit: 10) {
+    id
+    type
+    student {
+      id
+      name
+      address
+      dateOfBirth
+    }
   }
 }
 </pre>

@@ -1,15 +1,14 @@
 package com.coloza.demo.graphql.service;
 
+import com.coloza.demo.graphql.model.entity.Student;
+import com.coloza.demo.graphql.model.repository.StudentRepository;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.coloza.demo.graphql.model.entity.Student;
-import com.coloza.demo.graphql.model.repository.StudentRepository;
 
 @Service
 public class StudentService {
